@@ -1,0 +1,42 @@
+{
+    "root-path" : "/home/yang/root",
+    "alias-root-name" : "awesome_root",
+    "remote" : false,
+    "description" : "Just for test for root path.",
+
+    "sub-nodes" : {
+        "local-files" : [{
+            "file-name" : "file1",
+            "file-actions" : {
+                "move" : true,
+                "from" : "",
+                "to" : ""}}],
+        "local-folders" : [{
+            "folder-name" : "folder1",
+            "folder-actions" : {
+                "move" : true,
+                "from" : "",
+                "to"   : ""
+            }
+            "local-files" : [],
+            "local-folders" : {
+                "folder-name" : "folder11",
+                "local-files" : [],
+                "local-folders" : {}}}]
+    }
+}
+
+{
+    "root-path" : "/home",
+    "root-sub-nodes" : [
+        "local-files" : [{ "file-name" : "file1",
+                           "file-actions": "actions"}
+                         { "file-name" : "file2",
+                           "file-actions": "actions"}
+                        ],
+        "local-folder" : [{ "folder-name": "folder1",
+                            "folder-action": "actions",
+                            "local-files": [ {"file-name" : "file11",
+                                              "file-action" : "actions"}]}],
+    ]
+}
