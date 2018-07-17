@@ -1,42 +1,60 @@
 {
-    "root-path" : "/home/yang/root",
-    "alias-root-name" : "awesome_root",
-    "remote" : false,
-    "description" : "Just for test for root path.",
-
-    "sub-nodes" : {
-        "local-files" : [{
-            "file-name" : "file1",
-            "file-actions" : {
-                "move" : true,
-                "from" : "",
-                "to" : ""}}],
-        "local-folders" : [{
-            "folder-name" : "folder1",
-            "folder-actions" : {
-                "move" : true,
-                "from" : "",
-                "to"   : ""
+    "template-type" : "file",
+    "template-context" :
+    {
+        "root-path" : "/home",
+        "alias-root-name" :"awesome_root",
+        "description" : " Test text.",
+        "remote" : false,
+        "local-files" : [
+            {
+                "file-name" : "file1",
+                "description" : "context of file1",
+                "file-actions" : {
+                    "move" : true,
+                    "from" : "./",
+                    "to"   : "../"
+                }
             }
-            "local-files" : [],
-            "local-folders" : {
-                "folder-name" : "folder11",
-                "local-files" : [],
-                "local-folders" : {}}}]
+        ],
+        "local-folders" : [
+            {
+                "folder-name" : "folder1",
+                "description" : "context of folder1",
+                "folder-actions" :{
+                    "move" : true,
+                    "from" : "./",
+                    "to"   : "../"
+                },
+                "local-files" : [
+                    {
+                        "file-name" : "file11",
+                        "file-actions" : {}
+                    }
+                ],
+                "local-folders" : [
+                    {
+                        "folder-name" : "folder11",
+                        "folder-actions" : {},
+                        "local-files" : [
+                            {
+                                "file-name" : "file111",
+                                "file-actions" : {}
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "folder-name" : "folder2",
+                "folder-actions" : {},
+                "local-files" : [
+                    {
+                        "file-name" : "file22",
+                        "file-actions" : {}
+                    }
+                ]
+            }
+        ]
     }
-}
-
-{
-    "root-path" : "/home",
-    "root-sub-nodes" : [
-        "local-files" : [{ "file-name" : "file1",
-                           "file-actions": "actions"}
-                         { "file-name" : "file2",
-                           "file-actions": "actions"}
-                        ],
-        "local-folder" : [{ "folder-name": "folder1",
-                            "folder-action": "actions",
-                            "local-files": [ {"file-name" : "file11",
-                                              "file-action" : "actions"}]}],
-    ]
 }

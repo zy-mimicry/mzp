@@ -3,11 +3,10 @@
 
 # Author : mz
 # Date   : 2018-07-12
-# TODO   : parse the special template file for other tools.
+# TODO   :
 
 # Version: 0.0.1
 # ^ History ^
-### Init the base function for json
 ###
 
 try:
@@ -20,8 +19,8 @@ except ImportError as e:
     pass
 
 import re
-from . import beautify_print.mzp_beautify_print as mzpp
-#from beautify_print import mzp_beautify_print as mzpp
+#from . import beautify_print.mzp_beautify_print as mzpp
+from beautify_print import mzp_beautify_print as mzpp
 
 
 class ConfException(Exception):
@@ -49,16 +48,4 @@ class JsonConfParser(ConfTemplateParser):
                 self.data = json.loads(_f.read())
                 mzpp(self.data)
         return self.data
-
-if __name__ == "__main__":
-    zz = {'root-path': './',
-    'root-name': 'root',
-    'description': 'Just for test for root path.',
-    'sub-nodes': {'local-files': [{'file-name': 'file1',
-        'file-actions': {'move': True, 'from': '', 'to': ''}}],
-    'local-folders': {'folder-name': 'folder1',
-    'local-files': [100, 2, 4 ,{"hello" : 888, 100 : "dd" , (100,99): "jjj" , "mm" : [100 , 22]}],
-    'local-folders': {'folder-name': 'folder11',
-        'local-files': [100, "jk", ["fuck",(1,2,3,4,5), {100 : 11}]],
-        'local-folders': {}}}}}
 
