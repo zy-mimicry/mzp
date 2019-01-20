@@ -1,9 +1,9 @@
-# Package ReadMe
+* Package ReadMe
 
-## Package For What
+** Package For What
 
 This package aims to do some common things.
 
-## Stage For Package
+** Stage For Package
 
 Now, it's in the Alpha stage.
